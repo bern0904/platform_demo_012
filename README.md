@@ -1,6 +1,9 @@
 # platform_demo_012
 Test Task For Logicim - Demonstrate ASP.NET Web App
 
+![image](https://github.com/bern0904/platform_demo_012/assets/23713646/4f120f23-7013-4bb8-a309-25a28ecd9b15)
+
+
 TEST TASK TO COMPLETE
 - Share a link to a new GitHub repository with recruiting@logicimtech.com. 
 - The GitHub repository name is: platform_demo_012. 
