@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Customer Summary";
+}
+<link rel="stylesheet" href="~/css/table-sort.css" asp-append-version="true"/>
+<div>
+    <h1>Customer Order Summary</h1>
+    <table class="sortable table-wrap">
+    <thead>
+        <tr>
+            <th aria-sort="ascending">
+                <button data-column-index="0">
+                    @Html.DisplayNameFor(model => model.customerOrderSummaries[0].Name)
+                    <span aria-hidden="true"></span>
+                </button>
+            </th>
+            <th>
+                <button data-column-index="1">
+                    @Html.DisplayNameFor(model => model.customerOrderSummaries[0].PhoneNumber)
+                    <span aria-hidden="true"></span>
+                </button>
+            </th>
+            <th class="num">
+                <button data-column-index="2">
+                    @Html.DisplayNameFor(model => model.customerOrderSummaries[0].TotalOrderAmount)
+                    <span aria-hidden="true"></span>
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.customerOrderSummaries) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td class="num">
+                    @Html.DisplayFor(modelItem => item.TotalOrderAmount)
+                </td>            
+            </tr>
+    }
+    </tbody>
+</table>
+<span>Showing results for @Model.customerOrderSummaries.Count customers.</span><br />
+<span>A total of $@Model.customerOrderSummaries.Sum(sum => sum.TotalOrderAmount) was earned so far.</span>
+</div>
+<script src="~/js/table-sort.js"></script>
